@@ -16,8 +16,9 @@ void print_packet_sf(const unsigned char *packet) {
     {
         address=(address<<8) | packet[i];
     }
-    address=0;
+    
     printf("%010llx\n",address);
+    address=0;
     for(int i=5;i<10;i++)
     {
         address=(address<<8) | packet[i];
@@ -118,4 +119,11 @@ unsigned int checksum_sf(const unsigned char *packet) {
 unsigned int reconstruct_sf(unsigned char *packets[], unsigned int packets_len, char *message, unsigned int message_len) {
     return 0;
 }
+// int main()
+// {
+//      unsigned char packet[] = "\x00\x00\x00\x30\x39\x00\x00\x01\x09\x3b\x20\x40\x00\x00\x00\x10\x00\x00\x00\x1d\x00\xa5\x25\x17\x41\x42\x43\x44\x45RANDOM GARBAGE YOU SHOULD NOT SEE THIS";
+//      print_packet_sf(packet);
+
+//     return 0;
+// }
 
