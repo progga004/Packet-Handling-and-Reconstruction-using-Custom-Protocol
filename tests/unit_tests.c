@@ -92,7 +92,7 @@ Test(base_return, checksum01, .description="Compute a checksum") {
     unsigned int expected = 0x149f1;
     report_return_value(actual, expected);
 }
-
+                              
 Test(base_output, reconstruct01, .description="Function given more than enough memory to reconstruct the message.") {
     char *packets[] = {
         "\x38\x91\x8a\x27\x31\x1e\x82\xca\xb0\x29\x20\x40\x00\x00\x0c\x03\x1f\x00\x00\x24\x14\x54\xdb\x60\x6f\x20\x77\x61\x79\x73\x20\x74\x6f\x20\x77\x72",
