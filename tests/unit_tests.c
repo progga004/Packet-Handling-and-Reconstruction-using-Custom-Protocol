@@ -53,11 +53,6 @@ void expect_error_exit(int status) {
 
 void expect_no_valgrind_errors(int status) {
     cr_expect_neq(WEXITSTATUS(status), 37, "Valgrind reported errors -- see %s", test_log_outfile);
-    if (WEXITSTATUS(status) == 37) {
-        char cmd[200];
-        sprintf(cmd, "cat %s", test_log_outfile);
-        system(cmd);
-    }
 }
 
 void report_message(char *actual, char *expected) {
@@ -92,7 +87,7 @@ Test(base_return, checksum01, .description="Compute a checksum") {
     unsigned int expected = 0x149f1;
     report_return_value(actual, expected);
 }
-                              
+
 Test(base_output, reconstruct01, .description="Function given more than enough memory to reconstruct the message.") {
     char *packets[] = {
         "\x38\x91\x8a\x27\x31\x1e\x82\xca\xb0\x29\x20\x40\x00\x00\x0c\x03\x1f\x00\x00\x24\x14\x54\xdb\x60\x6f\x20\x77\x61\x79\x73\x20\x74\x6f\x20\x77\x72",
@@ -314,7 +309,7 @@ Test(base_output, packetize01, .description="Packetize a short message. packets[
     unsigned int packets_len = 3;
     unsigned int max_payload = 5;
     unsigned long src_addr = 12345;
-    unsigned long dest_addr = 67899;    ``
+    unsigned long dest_addr = 67899;
     unsigned short encryption = 4096;
 
     char *packets_exp[] = {
