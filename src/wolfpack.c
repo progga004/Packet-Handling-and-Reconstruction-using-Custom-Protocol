@@ -258,8 +258,9 @@ unsigned int reconstruct_sf(unsigned char *packets[], unsigned int packets_len, 
         
         else
         {
+            if(sum-1<message_len){
             message[sum-1]='\0';
-            break;
+            break;}
         }
         }
         
