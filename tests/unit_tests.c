@@ -314,7 +314,7 @@ Test(base_output, packetize01, .description="Packetize a short message. packets[
     unsigned int packets_len = 3;
     unsigned int max_payload = 5;
     unsigned long src_addr = 12345;
-    unsigned long dest_addr = 67899;
+    unsigned long dest_addr = 67899;    ``
     unsigned short encryption = 4096;
 
     char *packets_exp[] = {
