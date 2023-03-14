@@ -71,14 +71,14 @@ unsigned int packetize_sf(const char *message, unsigned char *packets[], unsigne
 
    unsigned int count=(strlen(message)/max_payload);
 	    unsigned int payloads_length=max_payload;
-	    unsigned int m=0;
+	    
 	    unsigned int new_count=0;
 	    //printf("the message length is: %d\n",strlen(message));
 	    if(strlen(message)%max_payload!=0)
 	    {
 	        count=count+1;
 	    }
-	    int i=0;
+	    unsigned int i=0;
 	    for( i=0;i<packets_len;i++)
 	    {
 	        //extract the payloads length
@@ -121,7 +121,7 @@ unsigned int packetize_sf(const char *message, unsigned char *packets[], unsigne
 	        packets[i][23]=(checksum>>0) & 0xFF;
 	        //calculating the payload
 	        unsigned int p=fragment_offset;
-	        for(int k=24;k<payloads_length+24;k++)
+	        for(unsigned int k=24;k<payloads_length+24;k++)
 	        {
 	            packets[i][k]=message[p];
 	           //printf("the packets contents are: %02x\n",packets[i][k]);
@@ -187,7 +187,7 @@ unsigned int checksum_sf(const unsigned char *packet)
 
 
 
-int total_length_read(char *packets) // with the payload
+int total_length_read(unsigned char *packets) // with the payload
 {
     
     int address=0;
@@ -203,13 +203,13 @@ int total_length_read(char *packets) // with the payload
 unsigned int reconstruct_sf(unsigned char *packets[], unsigned int packets_len, char *message, unsigned int message_len)
 {
    
-   int index=0;
+   unsigned long index=0;
    unsigned int count=0;
    unsigned long sum=0;
-   for(int i=0;i<packets_len;i++) // individual packets
+   for(unsigned int i=0;i<packets_len;i++) // individual packets
    {
     unsigned int checksum= checksum_sf(packets[i]);// passing the checksum of the individual packets
-    int source_address=0;
+    unsigned int source_address=0;
      
      for(int j=20;j<24;j++) //extract the checksum
     {
@@ -247,7 +247,7 @@ unsigned int reconstruct_sf(unsigned char *packets[], unsigned int packets_len, 
                 index=sum;
             }
             
-            int p=sum+1;
+           unsigned int p=sum+1;
             if(p<=message_len-1)
             {
                 sum=p;
