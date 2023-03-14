@@ -274,7 +274,7 @@ unsigned int reconstruct_sf(unsigned char *packets[], unsigned int packets_len, 
        
       
    }}
-   if(index >= 0 && index < message_len - 1){
+   if(index > 0 && index < message_len - 1){
    message[index+1]='\0';}
    //printf("The message is:%s\n",message);
     //printf("The count is:%d\n",count);
