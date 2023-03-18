@@ -1,0 +1,404 @@
+{
+  "id": "Criterion v2.4.0",
+  "passed": 59,
+  "failed": 5,
+  "errored": 0,
+  "skipped": 0,
+  "test_suites": [
+    {
+      "name": "grading_valgrind",
+      "passed": 13,
+      "failed": 1,
+      "errored": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "name": "reconstruct08",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct07",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct06",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct05",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize06",
+          "assertions": 1,
+          "status": "FAILED",
+          "messages": [
+            "../../../tests/unit_tests.c:55: Valgrind reported errors -- see tests.out/grading_packetize06.log"
+          ]
+        },
+        {
+          "name": "packetize05",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize01",
+          "assertions": 1,
+          "status": "PASSED"
+        }
+      ]
+    },
+    {
+      "name": "grading_return",
+      "passed": 14,
+      "failed": 1,
+      "errored": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "name": "reconstruct08",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct07",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct06",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct05",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize06",
+          "assertions": 1,
+          "status": "FAILED",
+          "messages": [
+            "../../../tests/unit_tests.c:86: Return value was 50, but it should have been 5."
+          ]
+        },
+        {
+          "name": "packetize05",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "checksum01",
+          "assertions": 1,
+          "status": "PASSED"
+        }
+      ]
+    },
+    {
+      "name": "grading_output",
+      "passed": 12,
+      "failed": 3,
+      "errored": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "name": "reconstruct08",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct07",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct06",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct05",
+          "assertions": 1,
+          "status": "FAILED",
+          "messages": [
+            "../../../tests/unit_tests.c:59: Contents of message incorrect.",
+            "  Actual:   &&&&&&&&&st you don't succeed, then skydiving isn'o&&&",
+            "  Expected: &&&&&&&&&st you don't succeed, then skydiving isn'"
+          ]
+        },
+        {
+          "name": "reconstruct04",
+          "assertions": 1,
+          "status": "FAILED",
+          "messages": [
+            "../../../tests/unit_tests.c:59: Contents of message incorrect.",
+            "  Actual:   Vovl\",
+            "  Expected: V"
+          ]
+        },
+        {
+          "name": "reconstruct03",
+          "assertions": 1,
+          "status": "FAILED",
+          "messages": [
+            "../../../tests/unit_tests.c:59: Contents of message incorrect.",
+            "  Actual:   It's no use going back to yesterday, because I was a different person then. *Lewis Cl&M{ñ",
+            "  Expected: It's no use going back to yesterday, because I was a different person then. *Lewis C"
+          ]
+        },
+        {
+          "name": "reconstruct02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "print_packet01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize06",
+          "assertions": 5,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize05",
+          "assertions": 2,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize01",
+          "assertions": 8,
+          "status": "PASSED"
+        }
+      ]
+    },
+    {
+      "name": "base_valgrind",
+      "passed": 6,
+      "failed": 0,
+      "errored": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "name": "reconstruct04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize01",
+          "assertions": 1,
+          "status": "PASSED"
+        }
+      ]
+    },
+    {
+      "name": "base_return",
+      "passed": 7,
+      "failed": 0,
+      "errored": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "name": "reconstruct04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "checksum01",
+          "assertions": 1,
+          "status": "PASSED"
+        }
+      ]
+    },
+    {
+      "name": "base_output",
+      "passed": 7,
+      "failed": 0,
+      "errored": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "name": "reconstruct04",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct03",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct02",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "reconstruct01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "print_packet01",
+          "assertions": 1,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize01",
+          "assertions": 3,
+          "status": "PASSED"
+        },
+        {
+          "name": "packetize02",
+          "assertions": 4,
+          "status": "PASSED"
+        }
+      ]
+    }
+  ]
+}
