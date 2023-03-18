@@ -1,0 +1,207 @@
+[----] Criterion v2.4.0
+[====] Running 7 tests from base_output:
+[RUN ] base_output::packetize02
+[----]   Packetize a message that is too large to completely packetize.
+[RUN ] base_output::packetize01
+[----]   Packetize a short message. packets[] is the optimal length.
+[RUN ] base_output::print_packet01
+[----]   Print the contents of a packet
+[PASS] base_output::packetize02: (0.00s)
+[RUN ] base_output::reconstruct01
+[----]   Function given more than enough memory to reconstruct the message.
+[PASS] base_output::packetize01: (0.00s)
+[PASS] base_output::reconstruct01: (0.00s)
+[PASS] base_output::print_packet01: (0.01s)
+[====] Running 7 tests from base_return:
+[RUN ] base_output::reconstruct02
+[----]   Function not given enough memory to reconstruct the message.
+[RUN ] base_output::reconstruct03
+[----]   Function given more memory than needed, but some packets are corrupted.
+[RUN ] base_output::reconstruct04
+[----]   First and last packets, and a middle packet, are corrupted.
+[RUN ] base_return::checksum01
+[----]   Compute a checksum
+[PASS] base_output::reconstruct02: (0.01s)
+[PASS] base_output::reconstruct03: (0.00s)
+[PASS] base_output::reconstruct04: (0.00s)
+[PASS] base_return::checksum01: (0.00s)
+[RUN ] base_return::packetize01
+[----]   Packetize a short message. packets[] is the optimal length.
+[RUN ] base_return::packetize02
+[----]   Packetize a message that is too large to completely packetize.
+[RUN ] base_return::reconstruct01
+[----]   Function given more than enough memory to reconstruct the message.
+[PASS] base_return::packetize01: (0.00s)
+[PASS] base_return::packetize02: (0.00s)
+[PASS] base_return::reconstruct01: (0.00s)
+[====] Running 6 tests from base_valgrind:
+[RUN ] base_return::reconstruct02
+[----]   Function not given enough memory to reconstruct the message.
+[RUN ] base_return::reconstruct03
+[----]   Function given more memory than needed, but some packets are corrupted.
+[RUN ] base_return::reconstruct04
+[----]   First and last packets, and a middle packet, are corrupted.
+[PASS] base_return::reconstruct03: (0.00s)
+[PASS] base_return::reconstruct02: (0.00s)
+[PASS] base_return::reconstruct04: (0.00s)
+[RUN ] base_valgrind::packetize01
+[RUN ] base_valgrind::packetize02
+[RUN ] base_valgrind::reconstruct01
+[RUN ] base_valgrind::reconstruct02
+[PASS] base_valgrind::packetize02: (0.56s)
+[PASS] base_valgrind::reconstruct01: (0.56s)
+[PASS] base_valgrind::reconstruct02: (0.56s)
+[PASS] base_valgrind::packetize01: (0.58s)
+[RUN ] base_valgrind::reconstruct03
+[====] Running 15 tests from grading_output:
+[RUN ] grading_output::packetize01
+[----]   Packetize a short message. packets[] is the optimal length.
+[RUN ] base_valgrind::reconstruct04
+[RUN ] grading_output::packetize02
+[----]   Message stored in one packet. max_payload smaller than needed.
+[PASS] grading_output::packetize02: (0.00s)
+[PASS] grading_output::packetize01: (0.01s)
+[RUN ] grading_output::packetize03
+[----]   Message fits in one packet. max_payload larger than needed.
+[RUN ] grading_output::packetize04
+[----]   Message fits in one packet. max_payload exactly the right size.
+[PASS] grading_output::packetize03: (0.00s)
+[PASS] grading_output::packetize04: (0.00s)
+[RUN ] grading_output::packetize05
+[----]   Message fits in one packet plus one extra packet for final character of message.
+[PASS] grading_output::packetize05: (0.00s)
+[RUN ] grading_output::packetize06
+[----]   Message split across multiple packets. packets[] is longer than needed.
+[RUN ] grading_output::print_packet01
+[----]   Print the contents of a packet
+[PASS] grading_output::packetize06: (0.00s)
+[PASS] grading_output::print_packet01: (0.01s)
+[RUN ] grading_output::reconstruct01
+[----]   Function given more than enough memory to store the entire message.
+[RUN ] grading_output::reconstruct02
+[----]   Function given exactly enough memory to store the entire message.
+[PASS] grading_output::reconstruct01: (0.00s)
+[PASS] grading_output::reconstruct02: (0.00s)
+[RUN ] grading_output::reconstruct03
+[----]   Function given a few bytes byte of memory less than needed to store the entire message.
+[RUN ] grading_output::reconstruct04
+[----]   Function given only two bytes of memory to store the message.
+[----] ../../../tests/unit_tests.c:59: Assertion Failed
+[----]   
+[----]   Contents of message incorrect.
+[----]   Actual:   It's no use going back to yesterday, because I was a different person then. *Lewis Cl&M{ñ
+[----]   Expected: It's no use going back to yesterday, because I was a different person then. *Lewis C
+[----]   
+[FAIL] grading_output::reconstruct03: (0.00s)
+[----] ../../../tests/unit_tests.c:59: Assertion Failed
+[----]   
+[----]   Contents of message incorrect.
+[----]   Actual:   Vovl\
+[----]   Expected: V
+[----]   
+[FAIL] grading_output::reconstruct04: (0.00s)
+[RUN ] grading_output::reconstruct05
+[----]   Function not given enough memory to store the entire message, and first packet corrupted.
+[----] ../../../tests/unit_tests.c:59: Assertion Failed
+[----]   
+[----]   Contents of message incorrect.
+[----]   Actual:   &&&&&&&&&st you don't succeed, then skydiving isn'o&&&
+[----]   Expected: &&&&&&&&&st you don't succeed, then skydiving isn'
+[----]   
+[FAIL] grading_output::reconstruct05: (0.00s)
+[RUN ] grading_output::reconstruct06
+[----]   Function given more memory than needed, but last two packets are corrupted.
+[PASS] grading_output::reconstruct06: (0.00s)
+[RUN ] grading_output::reconstruct07
+[----]   Function given more memory than needed, but packets 1, 3, 4 are corrupted.
+[PASS] grading_output::reconstruct07: (0.00s)
+[RUN ] grading_output::reconstruct08
+[----]   Function given more than enough memory to store the entire message.
+[====] Running 15 tests from grading_return:
+[RUN ] grading_return::checksum01
+[----]   Compute a checksum
+[PASS] grading_output::reconstruct08: (0.01s)
+[PASS] grading_return::checksum01: (0.00s)
+[RUN ] grading_return::packetize01
+[----]   Packetize a short message. packets[] is the optimal length.
+[RUN ] grading_return::packetize02
+[----]   Message stored in one packet. max_payload smaller than needed.
+[PASS] grading_return::packetize01: (0.00s)
+[PASS] grading_return::packetize02: (0.00s)
+[RUN ] grading_return::packetize03
+[----]   Message fits in one packet. max_payload larger than needed.
+[RUN ] grading_return::packetize04
+[----]   Message fits in one packet. max_payload exactly the right size.
+[PASS] grading_return::packetize03: (0.00s)
+[PASS] grading_return::packetize04: (0.00s)
+[RUN ] grading_return::packetize05
+[----]   Message fits in one packet plus one extra packet for final character of message.
+[RUN ] grading_return::packetize06
+[----]   Message split across multiple packets. packets[] is longer than needed.
+[----] ../../../tests/unit_tests.c:86: Assertion Failed
+[----]   
+[----]   Return value was 50, but it should have been 5.
+[----]   
+[PASS] grading_return::packetize05: (0.00s)
+[FAIL] grading_return::packetize06: (0.00s)
+[RUN ] grading_return::reconstruct01
+[----]   Function given more than enough memory to store the entire message.
+[RUN ] grading_return::reconstruct02
+[----]   Function given exactly enough memory to store the entire message.
+[PASS] grading_return::reconstruct01: (0.00s)
+[PASS] grading_return::reconstruct02: (0.00s)
+[RUN ] grading_return::reconstruct03
+[----]   Function given a few bytes of memory less than needed to store the entire message.
+[RUN ] grading_return::reconstruct04
+[----]   Function given only two bytes of memory to store the message.
+[PASS] grading_return::reconstruct03: (0.00s)
+[PASS] grading_return::reconstruct04: (0.01s)
+[RUN ] grading_return::reconstruct05
+[----]   Function not given enough memory to store the entire message, and first packet corrupted.
+[PASS] grading_return::reconstruct05: (0.00s)
+[RUN ] grading_return::reconstruct06
+[----]   Function given more memory than needed, but last two packets are corrupted.
+[PASS] grading_return::reconstruct06: (0.01s)
+[RUN ] grading_return::reconstruct07
+[----]   Function given more memory than needed, but packets 1, 3, 4 are corrupted.
+[PASS] grading_return::reconstruct07: (0.00s)
+[RUN ] grading_return::reconstruct08
+[----]   Function given more than enough memory to store the entire message.
+[====] Running 14 tests from grading_valgrind:
+[RUN ] grading_valgrind::packetize01
+[PASS] grading_return::reconstruct08: (0.01s)
+[RUN ] grading_valgrind::packetize02
+[PASS] base_valgrind::reconstruct03: (0.58s)
+[PASS] base_valgrind::reconstruct04: (0.58s)
+[RUN ] grading_valgrind::packetize03
+[RUN ] grading_valgrind::packetize04
+[PASS] grading_valgrind::packetize01: (0.56s)
+[RUN ] grading_valgrind::packetize05
+[PASS] grading_valgrind::packetize02: (0.57s)
+[RUN ] grading_valgrind::packetize06
+[PASS] grading_valgrind::packetize03: (0.58s)
+[PASS] grading_valgrind::packetize04: (0.57s)
+[RUN ] grading_valgrind::reconstruct01
+[RUN ] grading_valgrind::reconstruct02
+[----] ../../../tests/unit_tests.c:55: Assertion Failed
+[----]   
+[----]   Valgrind reported errors -- see tests.out/grading_packetize06.log
+[----]   
+[FAIL] grading_valgrind::packetize06: (0.56s)
+[PASS] grading_valgrind::packetize05: (0.61s)
+[RUN ] grading_valgrind::reconstruct03
+[RUN ] grading_valgrind::reconstruct04
+[PASS] grading_valgrind::reconstruct02: (0.57s)
+[RUN ] grading_valgrind::reconstruct05
+[PASS] grading_valgrind::reconstruct01: (0.59s)
+[RUN ] grading_valgrind::reconstruct06
+[PASS] grading_valgrind::reconstruct04: (0.55s)
+[RUN ] grading_valgrind::reconstruct07
+[PASS] grading_valgrind::reconstruct03: (0.58s)
+[RUN ] grading_valgrind::reconstruct08
+[PASS] grading_valgrind::reconstruct05: (0.55s)
+[PASS] grading_valgrind::reconstruct06: (0.54s)
+[PASS] grading_valgrind::reconstruct07: (0.52s)
+[PASS] grading_valgrind::reconstruct08: (0.52s)
+[----] Writing json report in `test_results.json`.
+[====] Synthesis: Tested: 64 | Passing: 59 | Failing: 5 | Crashing: 0 
